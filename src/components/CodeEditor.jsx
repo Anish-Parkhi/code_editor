@@ -2,7 +2,7 @@ import Editor from '@monaco-editor/react';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import axios from 'axios';
 import { useRef, useState } from 'react';
-import {Blocks} from 'react-loader-spinner'; // Make sure to install this package
+import { Blocks } from 'react-loader-spinner'; // Make sure to install this package
 import logo from '../assets/js.svg';
 import styles from './styles.module.css';
 
@@ -48,17 +48,24 @@ function CodeEditor() {
         </div>
       )}
       <div
-        className={`p-4 flex flex-row flex-end ${isLoading ? 'blur-sm' : ''}`}
+        className={`p-4 flex flex-row justify-between ${
+          isLoading ? 'blur-sm' : ''
+        }`}
       >
-        <img src={logo} alt="logo" className="w-8 h-8" />
-        <h1 className="text-2xl ml-2 flex flex-col">
-          <div className="justify-end self-end justify-self-end content-end">
-            Editor
-          </div>
-        </h1>
+        <div className="flex flex-row">
+          <img src={logo} alt="logo" className="w-8 h-8" />
+          <h1 className="text-2xl ml-2 flex flex-col">
+            <div className="justify-end self-end justify-self-end content-end">
+              Editor
+            </div>
+          </h1>
+        </div>
+        <button>Change Theme</button>
       </div>
       <div className={`flex flex-row w-full ${isLoading ? 'blur-sm' : ''}`}>
-        <div className={` ${styles.containerbg} rounded-lg border-2 m-2 border-slate-800 border-solid basis-1/2`}>
+        <div
+          className={` ${styles.containerbg} rounded-lg border-2 m-2 border-slate-800 border-solid basis-1/2`}
+        >
           <div className="p-2">script.js</div>
           <div className="border-slate-600 border-2"></div>
           <Editor
@@ -70,16 +77,20 @@ function CodeEditor() {
             theme="vs-dark"
           />
         </div>
-        <div className={`${styles.containerbg} rounded-lg border-2 m-2 border-slate-800 border-solid basis-1/2`}>
+        <div
+          className={`${styles.containerbg} rounded-lg border-2 m-2 border-slate-800 border-solid basis-1/2`}
+        >
           <div className="p-2">Console.log</div>
           <div className="border-slate-600 border-2"></div>
-          <div className="p-2">{res && res.result}</div>
+          <div className="p-2">
+            {res ? (res.error ? res.error : res.result) : null}
+          </div>
         </div>
       </div>
       <div className={`flex ${isLoading ? 'blur-sm' : ''}`}>
         <PlayCircleIcon
           onClick={submitCode}
-          sx={{
+          sx={{ 
             fontSize: '4rem',
             margin: 'auto',
             position: 'relative',
@@ -88,6 +99,9 @@ function CodeEditor() {
             cursor: 'pointer',
           }}
         />
+      </div>
+      <div className='flex justify-center' >
+        <div>Developed by @Anish Parkhi</div>
       </div>
     </div>
   );
