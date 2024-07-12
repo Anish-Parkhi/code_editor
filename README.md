@@ -1,7 +1,3 @@
-Here's a sample README file for your JavaScript code editor project:
-
----
-
 # JavaScript Code Editor
 
 This project is a JavaScript code editor that provides an interactive coding experience using the Monaco Editor. It allows users to write, validate, and execute JavaScript code in real-time. The backend execution of the code is powered by Node.js VM and Appwrite functions for serverless deployment.
@@ -9,6 +5,7 @@ This project is a JavaScript code editor that provides an interactive coding exp
 ## Features
 
 - **Interactive Code Editor:** Built with the Monaco Editor for a rich coding experience.
+- **Built-in linter:** Built-in linter for linting suggestions and error suggestions.
 - **JavaScript Code Validation:** Utilizes Esprima for validating JavaScript code.
 - **Serverless Backend Execution:** Uses Appwrite functions to run code on the backend.
 - **Theme Switcher:** Allows users to switch between different editor themes.
@@ -21,6 +18,11 @@ This project is a JavaScript code editor that provides an interactive coding exp
 - **Esprima:** JavaScript parser for code validation.
 - **Appwrite Functions:** For deploying serverless backend functions.
 - **Material-UI (MUI):** For UI components and theme switching.
+
+## snapshots
+![image](https://github.com/user-attachments/assets/31de318a-3aad-4ba4-802f-5d71787b19e5)
+![image](https://github.com/user-attachments/assets/02d2e79b-735a-482a-b653-abd35b2ff840)
+
 
 ## Getting Started
 
