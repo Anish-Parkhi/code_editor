@@ -1,11 +1,11 @@
-import CodeEditor from "../components/CodeEditor"
+import CodeEditor from '../components/CodeEditor';
 
-function Home() {
+function Home({ setTheme, theme }) {
   return (
     <div>
-      <CodeEditor />
+      <CodeEditor theme={theme} setTheme={setTheme} />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
